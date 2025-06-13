@@ -1,26 +1,20 @@
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
-
-
-const protectedRoutes = ['/admin/dashboard', '/admin/blog']
+const protectedRoutes = ["/admin/dashboard"];
 
 export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl
-  const token = request.cookies.get('token')?.value
+  const { pathname } = request.nextUrl;
+  const token = request.cookies.get("token")?.value;
 
-
-  if (protectedRoutes.some(route => pathname.startsWith(route)) && !token) {
-    const loginUrl = new URL('/login', request.url)
-    loginUrl.searchParams.set('from', pathname)
-    return NextResponse.redirect(loginUrl)
+  if (protectedRoutes.some((route) => pathname.startsWith(route)) && !token) {
+    const loginUrl = new URL("/admin-login", request.url);
+    return NextResponse.redirect(loginUrl);
   }
 
-
-  return NextResponse.next()
+  return NextResponse.next();
 }
-
 
 export const config = {
-  matcher: ['/admin/:path*', '/admin/:path*'], 
-}
+  matcher: ["/admin/:path*"],
+};
