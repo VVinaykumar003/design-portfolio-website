@@ -37,20 +37,20 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 relative">
+          <div className="flex items-center justify-between h-20 relative ">
             {/* Logo */}
             <Link
               href="/home"
               className="flex items-center cursor-pointer transition-opacity hover:opacity-80"
             >
               <Image
-                src="/logo.png"
+                src="/logo.jpg"
                 alt="Logo"
                 width={32}
                 height={32}
-                className="rounded-full"
+                className="rounded-full bg-yellow-200"
               />
-              <span className="ml-2 text-xl font-semibold dark:text-white">
+              <span className="ml-2 text-xl font-semibold text-white dark:text-white">
                 Design Portfolio
               </span>
             </Link>
@@ -58,34 +58,40 @@ const Navbar = () => {
             {/* Centered Company Name */}
             <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
               <h1 className="text-white text-2xl font-light tracking-wider whitespace-nowrap">
+                <a href="/home">
+
                 <span className="font-bold text-yellow-400">Your</span>Company
+                </a>
               </h1>
             </div>
 
             {/* Schedule Call Button */}
             <div className="flex items-center space-x-4">
-              <a
-                href="/schedule"
-                className="group relative px-6 py-2.5 bg-transparent border-2 border-yellow-400 rounded-full text-yellow-400 font-semibold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-yellow-400 hover:text-black overflow-hidden"
-              >
-                <span className="relative z-10 flex items-center space-x-2">
-                  <svg
-                    className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                    />
-                  </svg>
-                  <span>Schedule a Call</span>
-                </span>
-                <div className="absolute inset-0 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              </a>
+               <a
+  href="/contact"
+  className="group relative px-6 py-2.5 bg-transparent border-2 border-yellow-400 rounded-full text-yellow-400 font-semibold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-yellow-400 hover:text-black overflow-hidden hidden md:inline-block"
+>
+  <span className="relative z-10 flex items-center space-x-2">
+    <svg
+      className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+      />
+    </svg>
+    <span>Schedule a Call</span>
+  </span>
+  <div className="absolute inset-0 bg-yellow-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+</a>
+
+
+
 
               {/* Hamburger Menu Button */}
               <button
@@ -143,7 +149,7 @@ const Navbar = () => {
               >
                 <a
                   href={item.href}
-                  className="group relative text-4xl md:text-6xl font-light text-white hover:text-yellow-400 transition-colors duration-300 block"
+                  className="group relative text-3xl md:text-4xl lg:text-6xl font-light text-white hover:text-yellow-400 transition-colors duration-300 block"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span className="relative z-10">{item.name}</span>

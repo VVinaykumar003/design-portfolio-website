@@ -50,19 +50,24 @@ const VideoGallery = () => {
 
   const renderVideoCard = (video: typeof videos[0]) => (
     <div
-      key={video.id}
-      className="group p-25 relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-800 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/20"
-      onMouseEnter={() => setHoveredVideo(video.id)}
-      onMouseLeave={() => setHoveredVideo(null)}
-    >
+  key={video.id}
+  className={`group relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-800 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/20 ${
+    video.type === "portrait"
+      ? "aspect-[9/16] w-full max-w-[400px] mx-auto"
+      : "aspect-[16/9] w-full"
+  }`}
+  onMouseEnter={() => setHoveredVideo(video.id)}
+  onMouseLeave={() => setHoveredVideo(null)}
+>
       {/* Thumbnail */}
       <div className="absolute inset-0">
         <img
-          loading="lazy"
-          src={video.thumbnail}
-          alt={video.title}
-          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 "
-        />
+  loading="lazy"
+  src={video.thumbnail}
+  alt={video.title}
+  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
+/>
+
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
         <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 transition-colors duration-500"></div>
       </div>
@@ -125,11 +130,12 @@ const VideoGallery = () => {
       </div>
 
       {/* Portrait Videos */}
-      <section className="mb-16">
+      <section className="mb-16 ">
         <h2 className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-6 border-l-4 border-yellow-400 pl-4">
           Portrait Videos
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 place-items-center">
+
           {portraitVideos.map(renderVideoCard)}
         </div>
       </section>

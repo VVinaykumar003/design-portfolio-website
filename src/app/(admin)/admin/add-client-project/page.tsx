@@ -123,7 +123,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> 
       method: 'POST',
       body: submitData,
     });
-
+            console.log('Submitting form with data:', response );
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.message || 'Failed to add project');
@@ -153,7 +153,12 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> 
 
         alert('Client project added successfully!');
     } catch (error) {
-        console.error('Error submitting form:', error);
+
+        if (error instanceof Error) {
+            console.error('Error submitting form:', error.message);
+        } else {
+            console.error('Error submitting form:', error);
+        }
         alert('Error submitting form. Please try again.');
     } finally {
         setIsSubmitting(false);

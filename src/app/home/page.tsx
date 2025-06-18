@@ -28,26 +28,33 @@ import VideoGallery from '../components/VideoGallery';
 import Testimonials from '../components/Testimonial';
 import MyWork from '../components/Work';
 import GallerySection from '../components/Gallery';
+ import {TypewriterEffectSmooth } from '../components/ui/typewriter-effect';
+ import ContainerTextFlip from '../components/ui/ContainerTextFlip';
 // import Gallery from '../models/galleryModel';;
 
+
+ 
 const Portfolio = () => {
   // const [activeFilter, setActiveFilter] = useState('All');
   // const [currentTestimonial, setCurrentTestimonial] = useState(0);
-//  const words = [
-//     {
-//       text: "Bring",
-//       className: "text-white dark:text-white",
-//     },
-//     {
-//       text: "Ideas",
-//       className: "text-white dark:text-white",
-//     },
-//     {
-//       text: "to Life",
-//        className: "text-yellow-400 dark:text-yellow-400",
-//     },
+  
+
+ const words = [
+    {
+      text: "Bring",
+      className: "text-white dark:text-white",
+    },
+    {
+      text: "Ideas",
+      className: "text-white dark:text-white",
+    },
+    {
+      text: "to Life",
+       className: "text-yellow-400 dark:text-yellow-400",
+    },
    
-//   ];
+  ];
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -95,7 +102,7 @@ const Portfolio = () => {
     }
   };
 
-  // Sample data
+ 
   // const projects = [
   //   { id: 1, title: 'Brand Identity Design', category: 'Branding', tags: ['Logo', 'Brand Guidelines', 'Stationery'] },
   //   { id: 2, title: 'E-commerce Website', category: 'Web', tags: ['UI/UX', 'Responsive', 'E-commerce'] },
@@ -180,96 +187,66 @@ const Portfolio = () => {
   return (
     <div className="bg-black text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 sm:mt-10">
-          <motion.div
-            className="absolute top-20 left-20 w-96 h-96 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-            animate={{
-              scale: [1, 1.2, 1],
-              x: [0, 50, 0],
-              y: [0, -30, 0],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-          <motion.div
-            className="absolute top-40 right-20 w-80 h-80 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10"
-            animate={{
-              scale: [1, 1.3, 1],
-              x: [0, -30, 0],
-              y: [0, 40, 0],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
-          />
-          <motion.div
-            className="absolute bottom-20 left-1/3 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-15"
-            animate={{
-              scale: [1, 1.1, 1],
-              x: [0, 20, 0],
-              y: [0, -20, 0],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 4
-            }}
-          />
+      <section className="relative overflow-hidden bg-black">
+  {/* Animated Background */}
+  <div className="absolute inset-0 z-0">
+    <motion.div
+      className="absolute top-20 left-8 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+      animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -30, 0] }}
+      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+    />
+    <motion.div
+      className="absolute top-32 right-8 w-60 h-60 sm:w-72 sm:h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10"
+      animate={{ scale: [1, 1.3, 1], x: [0, -30, 0], y: [0, 40, 0] }}
+      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+    />
+    <motion.div
+      className="absolute bottom-24 left-1/3 w-56 h-56 sm:w-72 sm:h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-15"
+      animate={{ scale: [1, 1.1, 1], x: [0, 20, 0], y: [0, -20, 0] }}
+      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+    />
+    <motion.div
+      className="absolute top-1/4 left-10 w-4 h-4 bg-yellow-400 transform rotate-45"
+      variants={floatingVariants}
+      animate="animate"
+    />
+    <motion.div
+      className="absolute top-1/3 right-1/4 w-3 h-3 bg-white rounded-full"
+      variants={floatingVariants}
+      animate="animate"
+      transition={{ delay: 1 }}
+    />
+    <motion.div
+      className="absolute bottom-1/3 right-10 w-5 h-5 bg-yellow-300 transform rotate-12"
+      variants={floatingVariants}
+      animate="animate"
+      transition={{ delay: 2 }}
+    />
+  </div>
 
-          <motion.div
-            className="absolute top-1/4 left-10 w-4 h-4 bg-yellow-400 transform rotate-45"
-            variants={floatingVariants}
-            animate="animate"
-          />
-          <motion.div
-            className="absolute top-1/3 right-1/4 w-3 h-3 bg-white rounded-full"
-            variants={floatingVariants}
-            animate="animate"
-            transition={{ delay: 1 }}
-          />
-          <motion.div
-            className="absolute bottom-1/3 right-10 w-5 h-5 bg-yellow-300 transform rotate-12"
-            variants={floatingVariants}
-            animate="animate"
-            transition={{ delay: 2 }}
-          />
-        </div>
-
-       
-  {/* Main Container */}
+  {/* Main Content Container */}
   <motion.div
-    className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 min-h-screen flex items-center"
+    className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28 flex items-center"
     variants={containerVariants}
     initial="hidden"
     animate="visible"
   >
-    <div className="w-full flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
-      {/* Left Section: Text Content */}
-      <div className="text-white space-y-8 w-full">
+    <div className="w-full flex flex-col-reverse md:grid md:grid-cols-2 gap-16 md:gap-12 items-center">
+      
+      {/* Text Content */}
+      <div className="text-white space-y-8 w-full text-center md:text-left">
         <motion.div variants={itemVariants} className="space-y-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
-            Bringing
-            <span className="relative inline-block mx-4">
-              <span className="text-yellow-400">Ideas</span>
-              <motion.div
-                className="absolute -bottom-2 left-0 right-0 h-3 bg-yellow-400 opacity-30"
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ delay: 1, duration: 0.8 }}
-              />
-            </span>
-            to Life
+          <TypewriterEffectSmooth
+            words={words}
+            className="text-yellow-400 justify-center md:justify-start"
+          />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+            <ContainerTextFlip
+      words={["Creative Designer", "UI/UX Design", "Logo Design", "Print Media"]}
+    />
+            {/* <span className="text-white"></span> */}
           </h1>
-          <div className="flex items-center space-x-4 text-base sm:text-lg">
+          <div className="flex justify-center md:justify-start items-center space-x-4 text-base sm:text-lg">
             <motion.div
               className="w-10 sm:w-12 h-0.5 bg-yellow-400"
               initial={{ scaleX: 0 }}
@@ -282,12 +259,15 @@ const Portfolio = () => {
 
         <motion.p
           variants={itemVariants}
-          className="text-lg sm:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-lg"
+          className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-md mx-auto md:mx-0"
         >
           Freelance graphic designer crafting compelling visuals that communicate, inspire, and elevate your brand to new heights.
         </motion.p>
 
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-3">
+        <motion.div
+          variants={itemVariants}
+          className="flex flex-wrap gap-3 justify-center md:justify-start"
+        >
           {['Brand Identity', 'Web Design', 'Print Design', 'Illustration'].map((skill, index) => (
             <motion.span
               key={skill}
@@ -302,7 +282,10 @@ const Portfolio = () => {
           ))}
         </motion.div>
 
-        <motion.div variants={itemVariants} className="pt-4">
+        <motion.div
+          variants={itemVariants}
+          className="pt-4 flex justify-center md:justify-start"
+        >
           <motion.button
             className="group inline-flex items-center space-x-3 bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-yellow-300 transition-all duration-300"
             whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)" }}
@@ -316,14 +299,10 @@ const Portfolio = () => {
         </motion.div>
       </div>
 
-      {/* Right Section: Image/Visual */}
+      {/* Visual Section */}
       <motion.div variants={itemVariants} className="relative flex justify-center w-full">
-        <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg">
-          <motion.div
-            className="relative w-full aspect-square"
-            variants={pulseVariants}
-            animate="animate"
-          >
+        <div className="relative w-full max-w-[18rem] sm:max-w-sm md:max-w-md xl:max-w-lg">
+          <motion.div className="relative w-full aspect-square" variants={pulseVariants} animate="animate">
             <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full" />
             <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center overflow-hidden">
               <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
@@ -333,7 +312,6 @@ const Portfolio = () => {
                 </div>
               </div>
             </div>
-
             <motion.div
               className="absolute -top-6 -right-6 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg"
               animate={{ rotate: 360 }}
@@ -341,7 +319,6 @@ const Portfolio = () => {
             >
               <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
             </motion.div>
-
             <motion.div
               className="absolute -bottom-4 -left-4 w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400 rounded-full flex items-center justify-center"
               variants={floatingVariants}
@@ -357,7 +334,7 @@ const Portfolio = () => {
 
   {/* Scroll Indicator */}
   <motion.div
-    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
+    className="relative z-10 pb-10 flex justify-center"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 3 }}
@@ -378,6 +355,8 @@ const Portfolio = () => {
     </motion.div>
   </motion.div>
 </section>
+
+
 
       {/* About Me Section */}
       <AnimatedSection className="py-20 bg-white text-black">
