@@ -44,7 +44,7 @@ const Navbar = () => {
               className="flex items-center cursor-pointer transition-opacity hover:opacity-80"
             >
               <Image
-                src="/logo.jpg"
+                src="/logo.PNG"
                 alt="Logo"
                 width={32}
                 height={32}
@@ -67,9 +67,7 @@ const Navbar = () => {
 
             {/* Schedule Call Button */}
             <div className="flex items-center space-x-4">
-               <a
-  href="/contact"
-  className="group relative px-6 py-2.5 bg-transparent border-2 border-yellow-400 rounded-full text-yellow-400 font-semibold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-yellow-400 hover:text-black overflow-hidden hidden md:inline-block"
+   <a  href="/contact"   className="group relative px-6 py-2.5 bg-transparent border-2 border-yellow-400 rounded-full text-yellow-400 font-semibold text-sm tracking-wide uppercase transition-all duration-300 hover:bg-yellow-400 hover:text-black overflow-hidden hidden md:inline-block"
 >
   <span className="relative z-10 flex items-center space-x-2">
     <svg

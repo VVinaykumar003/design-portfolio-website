@@ -67,6 +67,7 @@ export async function GET() {
   try {
     await connectToDatabse();
     const gallery = await Gallery.find();
+    console.log("Gallery found: ", gallery);
 
     return NextResponse.json({
       message: "Found",

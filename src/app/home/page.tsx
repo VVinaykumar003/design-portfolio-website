@@ -1,11 +1,11 @@
 "use client";
-import React from 'react';
-import { motion, useInView } from 'framer-motion';
-import { 
-  ChevronRight, 
-  Sparkles, 
-  Palette, 
-  Zap, 
+import React from "react";
+import { motion, useInView } from "framer-motion";
+import {
+  ChevronRight,
+  Sparkles,
+  Palette,
+  Zap,
   Download,
   Brush,
   Monitor,
@@ -17,29 +17,29 @@ import {
   Github,
   Linkedin,
   Twitter,
+
   // Star,
   // ChevronLeft,
   // Eye,
   // ExternalLink
-} from 'lucide-react';
+} from "lucide-react";
 // import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
 // import Videos from '../components/Videos';
-import VideoGallery from '../components/VideoGallery';
-import Testimonials from '../components/Testimonial';
-import MyWork from '../components/Work';
-import GallerySection from '../components/Gallery';
- import {TypewriterEffectSmooth } from '../components/ui/typewriter-effect';
- import ContainerTextFlip from '../components/ui/ContainerTextFlip';
+import VideoGallery from "../components/VideoGallery";
+import Testimonials from "../components/Testimonial";
+import MyWork from "../components/Work";
+import GallerySection from "../components/Gallery";
+import { TypewriterEffectSmooth } from "../components/ui/typewriter-effect";
+import ContainerTextFlip from "../components/ui/ContainerTextFlip";
+import { HoverBorderGradient } from "../components/ui/hover-border-gradient";
+import Image from "next/image";
 // import Gallery from '../models/galleryModel';;
 
-
- 
 const Portfolio = () => {
   // const [activeFilter, setActiveFilter] = useState('All');
   // const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  
 
- const words = [
+  const words = [
     {
       text: "Bring",
       className: "text-white dark:text-white",
@@ -50,9 +50,8 @@ const Portfolio = () => {
     },
     {
       text: "to Life",
-       className: "text-yellow-400 dark:text-yellow-400",
+      className: "text-yellow-400 dark:text-yellow-400",
     },
-   
   ];
 
   // Animation variants
@@ -62,9 +61,9 @@ const Portfolio = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
-      }
-    }
+        staggerChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
@@ -74,9 +73,9 @@ const Portfolio = () => {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   const floatingVariants = {
@@ -86,9 +85,9 @@ const Portfolio = () => {
       transition: {
         duration: 6,
         repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   const pulseVariants = {
@@ -97,12 +96,11 @@ const Portfolio = () => {
       transition: {
         duration: 2,
         repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
- 
   // const projects = [
   //   { id: 1, title: 'Brand Identity Design', category: 'Branding', tags: ['Logo', 'Brand Guidelines', 'Stationery'] },
   //   { id: 2, title: 'E-commerce Website', category: 'Web', tags: ['UI/UX', 'Responsive', 'E-commerce'] },
@@ -136,30 +134,34 @@ const Portfolio = () => {
   const services = [
     {
       icon: Palette,
-      title: 'Logo Design',
-      description: 'Creating memorable and impactful brand identities that represent your unique story.'
+      title: "Logo Design",
+      description:
+        "Creating memorable and impactful brand identities that represent your unique story.",
     },
     {
       icon: Monitor,
-      title: 'Web Design',
-      description: 'Designing beautiful, user-friendly websites that engage and convert visitors.'
+      title: "Web Design",
+      description:
+        "Designing beautiful, user-friendly websites that engage and convert visitors.",
     },
     {
       icon: Printer,
-      title: 'Print Media',
-      description: 'Crafting stunning print materials from business cards to large format displays.'
+      title: "Print Media",
+      description:
+        "Crafting stunning print materials from business cards to large format displays.",
     },
     {
       icon: Brush,
-      title: 'Illustration',
-      description: 'Custom illustrations that bring concepts to life with artistic flair and precision.'
-    }
+      title: "Illustration",
+      description:
+        "Custom illustrations that bring concepts to life with artistic flair and precision.",
+    },
   ];
 
   // const filterOptions = ['All', 'Branding', 'Web', 'Posters', 'UI-UX'];
 
-  // const filteredProjects = activeFilter === 'All' 
-  //   ? projects 
+  // const filteredProjects = activeFilter === 'All'
+  //   ? projects
   //   : projects.filter(project => project.category === activeFilter);
 
   type AnimatedSectionProps = {
@@ -167,7 +169,10 @@ const Portfolio = () => {
     className?: string;
   };
 
-  const AnimatedSection: React.FC<AnimatedSectionProps> = ({ children, className = "" }) => {
+  const AnimatedSection: React.FC<AnimatedSectionProps> = ({
+    children,
+    className = "",
+  }) => {
     const ref = React.useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -188,181 +193,267 @@ const Portfolio = () => {
     <div className="bg-black text-white">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black">
-  {/* Animated Background */}
-  <div className="absolute inset-0 z-0">
-    <motion.div
-      className="absolute top-20 left-8 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
-      animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -30, 0] }}
-      transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-    />
-    <motion.div
-      className="absolute top-32 right-8 w-60 h-60 sm:w-72 sm:h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10"
-      animate={{ scale: [1, 1.3, 1], x: [0, -30, 0], y: [0, 40, 0] }}
-      transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-    />
-    <motion.div
-      className="absolute bottom-24 left-1/3 w-56 h-56 sm:w-72 sm:h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-15"
-      animate={{ scale: [1, 1.1, 1], x: [0, 20, 0], y: [0, -20, 0] }}
-      transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-    />
-    <motion.div
-      className="absolute top-1/4 left-10 w-4 h-4 bg-yellow-400 transform rotate-45"
-      variants={floatingVariants}
-      animate="animate"
-    />
-    <motion.div
-      className="absolute top-1/3 right-1/4 w-3 h-3 bg-white rounded-full"
-      variants={floatingVariants}
-      animate="animate"
-      transition={{ delay: 1 }}
-    />
-    <motion.div
-      className="absolute bottom-1/3 right-10 w-5 h-5 bg-yellow-300 transform rotate-12"
-      variants={floatingVariants}
-      animate="animate"
-      transition={{ delay: 2 }}
-    />
-  </div>
-
-  {/* Main Content Container */}
-  <motion.div
-    className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28 flex items-center"
-    variants={containerVariants}
-    initial="hidden"
-    animate="visible"
-  >
-    <div className="w-full flex flex-col-reverse md:grid md:grid-cols-2 gap-16 md:gap-12 items-center">
-      
-      {/* Text Content */}
-      <div className="text-white space-y-8 w-full text-center md:text-left">
-        <motion.div variants={itemVariants} className="space-y-4">
-          <TypewriterEffectSmooth
-            words={words}
-            className="text-yellow-400 justify-center md:justify-start"
+        {/* Animated Background */}
+        <div className="absolute inset-0 z-0">
+          <motion.div
+            className="absolute top-20 left-8 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+            animate={{ scale: [1, 1.2, 1], x: [0, 50, 0], y: [0, -30, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
           />
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
-            <ContainerTextFlip
-      words={["Creative Designer", "UI/UX Design", "Logo Design", "Print Media"]}
-    />
-            {/* <span className="text-white"></span> */}
-          </h1>
-          <div className="flex justify-center md:justify-start items-center space-x-4 text-base sm:text-lg">
+          <motion.div
+            className="absolute top-32 right-8 w-60 h-60 sm:w-72 sm:h-72 bg-white rounded-full mix-blend-multiply filter blur-xl opacity-10"
+            animate={{ scale: [1, 1.3, 1], x: [0, -30, 0], y: [0, 40, 0] }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 2,
+            }}
+          />
+          <motion.div
+            className="absolute bottom-24 left-1/3 w-56 h-56 sm:w-72 sm:h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-15"
+            animate={{ scale: [1, 1.1, 1], x: [0, 20, 0], y: [0, -20, 0] }}
+            transition={{
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 4,
+            }}
+          />
+          <motion.div
+            className="absolute top-1/4 left-10 w-4 h-4 bg-yellow-400 transform rotate-45"
+            variants={floatingVariants}
+            animate="animate"
+          />
+          <motion.div
+            className="absolute top-1/3 right-1/4 w-3 h-3 bg-white rounded-full"
+            variants={floatingVariants}
+            animate="animate"
+            transition={{ delay: 1 }}
+          />
+          <motion.div
+            className="absolute bottom-1/3 right-10 w-5 h-5 bg-yellow-300 transform rotate-12"
+            variants={floatingVariants}
+            animate="animate"
+            transition={{ delay: 2 }}
+          />
+        </div>
+
+        {/* Main Content Container */}
+        <motion.div
+          className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 md:py-28 flex items-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <div className="w-full flex flex-col-reverse md:grid md:grid-cols-2 gap-16 md:gap-12 items-center">
+            {/* Text Content */}
+            <div className="text-white space-y-8 w-full text-center md:text-left">
+              <motion.div variants={itemVariants} className="space-y-4">
+                <TypewriterEffectSmooth
+                  words={words}
+                  className="text-yellow-400 justify-center md:justify-start"
+                />
+                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+                  <ContainerTextFlip
+                    words={[
+                      "Creative Designer",
+                      "UI/UX Design",
+                      "Logo Design",
+                      "Print Media",
+                    ]}
+                  />
+                  {/* <span className="text-white"></span> */}
+                </h1>
+                <div className="flex justify-center md:justify-start items-center space-x-4 text-base sm:text-lg">
+                  <motion.div
+                    className="w-10 sm:w-12 h-0.5 bg-yellow-400"
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ delay: 1.5, duration: 0.6 }}
+                  />
+                  <span className="text-gray-300">
+                    Through Visual Storytelling
+                  </span>
+                </div>
+              </motion.div>
+
+              <motion.p
+                variants={itemVariants}
+                className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-md mx-auto md:mx-0"
+              >
+                Freelance graphic designer crafting compelling visuals that
+                communicate, inspire, and elevate your brand to new heights.
+              </motion.p>
+
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-wrap gap-3 justify-center md:justify-start"
+              >
+                {[
+                  "Brand Identity",
+                  "Web Design",
+                  "Print Design",
+                  "Illustration",
+                ].map((skill, index) => (
+                  <motion.span
+                    key={skill}
+                    className="px-4 py-2 bg-yellow-400 bg-opacity-20 text-black rounded-full text-sm font-medium border border-yellow-400 border-opacity-30"
+                    whileHover={{
+                      scale: 1.05,
+                      backgroundColor: "rgba(251, 191, 36, 0.3)",
+                    }}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 2 + index * 0.1 }}
+                  >
+                    {skill}
+                  </motion.span>
+                ))}
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                className="pt-4 flex justify-center md:justify-start"
+              >
+                <motion.button
+                  className="group inline-flex items-center space-x-3 bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-yellow-300 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <span>View My Work</span>
+                  <motion.div className="group-hover:translate-x-1 transition-transform duration-300">
+                    <ChevronRight className="w-5 h-5" />
+                  </motion.div>
+                </motion.button>
+              </motion.div>
+            </div>
+
+            {/* Visual Section */}
             <motion.div
-              className="w-10 sm:w-12 h-0.5 bg-yellow-400"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 1.5, duration: 0.6 }}
-            />
-            <span className="text-gray-300">Through Visual Storytelling</span>
+              variants={itemVariants}
+              className="relative flex justify-center w-full"
+            >
+              <div className="relative w-full max-w-[18rem] sm:max-w-sm md:max-w-md xl:max-w-lg">
+                <motion.div
+                  className="relative w-full aspect-square"
+                  variants={pulseVariants}
+                  animate="animate"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full" />
+                  <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                    <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                      <div className="text-center text-gray-600">
+                        {/* <Palette className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4" /> */}
+                        {/* <p className="text-sm font-medium">Profile Image</p> */}
+                  <Image
+                                  src="/profileImage.webp"
+                                  alt="Logo"
+                                  width={500}
+                                  height={500}
+                                  className="rounded-full bg-yellow-200"
+                                />
+                      </div>
+                    </div>
+                  </div>
+                  <motion.div
+                    className="absolute -top-6 -right-6 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg"
+                    animate={{ rotate: 360 }}
+                    transition={{
+                      duration: 20,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
+                  >
+                    <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
+                  </motion.div>
+                  <motion.div
+                    className="absolute -bottom-4 -left-4 w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400 rounded-full flex items-center justify-center"
+                    variants={floatingVariants}
+                    animate="animate"
+                  >
+                    <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-black" />
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
           </div>
         </motion.div>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-md mx-auto md:mx-0"
-        >
-          Freelance graphic designer crafting compelling visuals that communicate, inspire, and elevate your brand to new heights.
-        </motion.p>
-
+        {/* Mobile-Only Button: Sticky inside hero */}
         <motion.div
-          variants={itemVariants}
-          className="flex flex-wrap gap-3 justify-center md:justify-start"
+          whileHover={{
+            scale: 1.05,
+            boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)",
+          }}
+          whileTap={{ scale: 0.95 }}
+          className="relative w-full flex justify-center md:hidden mt-4 mb-8"
         >
-          {['Brand Identity', 'Web Design', 'Print Design', 'Illustration'].map((skill, index) => (
-            <motion.span
-              key={skill}
-              className="px-4 py-2 bg-yellow-400 bg-opacity-20 text-black rounded-full text-sm font-medium border border-yellow-400 border-opacity-30"
-              whileHover={{ scale: 1.05, backgroundColor: 'rgba(251, 191, 36, 0.3)' }}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 2 + index * 0.1 }}
-            >
-              {skill}
-            </motion.span>
-          ))}
-        </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="pt-4 flex justify-center md:justify-start"
-        >
-          <motion.button
-            className="group inline-flex items-center space-x-3 bg-yellow-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-yellow-300 transition-all duration-300"
-            whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)" }}
-            whileTap={{ scale: 0.95 }}
+          <HoverBorderGradient
+            containerClassName="rounded-full w-[90%] max-w-xs"
+            as="button"
+            className="w-full dark:bg-black bg-yellow-400 text-white dark:text-black flex items-center justify-center space-x-2 px-6 py-3 rounded-full shadow-lg text-sm font-semibold transition-all duration-300"
           >
-            <span>View My Work</span>
-            <motion.div className="group-hover:translate-x-1 transition-transform duration-300">
-              <ChevronRight className="w-5 h-5" />
-            </motion.div>
-          </motion.button>
+            <a
+              href="/contact"
+              className="relative w-full text-center flex justify-center items-center space-x-2"
+            >
+              <svg
+                className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              <span className="z-10">Schedule a Call</span>
+            </a>
+          </HoverBorderGradient>
         </motion.div>
-      </div>
 
-      {/* Visual Section */}
-      <motion.div variants={itemVariants} className="relative flex justify-center w-full">
-        <div className="relative w-full max-w-[18rem] sm:max-w-sm md:max-w-md xl:max-w-lg">
-          <motion.div className="relative w-full aspect-square" variants={pulseVariants} animate="animate">
-            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full" />
-            <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                <div className="text-center text-gray-600">
-                  <Palette className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4" />
-                  <p className="text-sm font-medium">Profile Image</p>
-                </div>
-              </div>
-            </div>
-            <motion.div
-              className="absolute -top-6 -right-6 w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            >
-              <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-500" />
-            </motion.div>
-            <motion.div
-              className="absolute -bottom-4 -left-4 w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400 rounded-full flex items-center justify-center"
-              variants={floatingVariants}
-              animate="animate"
-            >
-              <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-black" />
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.div>
-    </div>
-  </motion.div>
-
-  {/* Scroll Indicator */}
-  <motion.div
-    className="relative z-10 pb-10 flex justify-center"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 3 }}
-  >
-    <motion.div
-      animate={{ y: [0, 10, 0] }}
-      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      className="flex flex-col items-center space-y-2"
-    >
-      <span className="text-xs sm:text-sm text-gray-400">Scroll to explore</span>
-      <div className="w-5 sm:w-6 h-8 sm:h-10 border-2 border-gray-400 rounded-full flex justify-center">
+        {/* Scroll Indicator */}
         <motion.div
-          className="w-1 h-3 bg-yellow-400 rounded-full mt-2"
-          animate={{ y: [0, 16, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        />
-      </div>
-    </motion.div>
-  </motion.div>
-</section>
-
-
+          className="relative z-10 pb-10 flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 3 }}
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="flex flex-col items-center space-y-2"
+          >
+            <span className="text-xs sm:text-sm text-gray-400">
+              Scroll to explore
+            </span>
+            <div className="w-5 sm:w-6 h-8 sm:h-10 border-2 border-gray-400 rounded-full flex justify-center">
+              <motion.div
+                className="w-1 h-3 bg-yellow-400 rounded-full mt-2"
+                animate={{ y: [0, 16, 0] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              />
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
 
       {/* About Me Section */}
       <AnimatedSection className="py-20 bg-white text-black">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.h3 
+            <motion.h3
               className="text-yellow-600 text-sm font-bold tracking-wider uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -371,8 +462,8 @@ const Portfolio = () => {
             >
               Who Am I?
             </motion.h3>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-4xl lg:text-5xl font-bold mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -381,24 +472,38 @@ const Portfolio = () => {
             >
               Creative Designer with Passion for Innovation
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               className="text-lg text-gray-600 mb-12 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              With over 5 years of experience in graphic design, I specialize in creating compelling visual narratives 
-              that connect brands with their audiences. My approach combines strategic thinking with creative execution, 
-              ensuring every design not only looks beautiful but serves a purpose.
+              With over 5 years of experience in graphic design, I specialize in
+              creating compelling visual narratives that connect brands with
+              their audiences. My approach combines strategic thinking with
+              creative execution, ensuring every design not only looks beautiful
+              but serves a purpose.
             </motion.p>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               {[
-                { icon: Palette, title: 'Branding', desc: 'Complete brand identity systems' },
-                { icon: Monitor, title: 'UI/UX Design', desc: 'User-centered digital experiences' },
-                { icon: Brush, title: 'Illustration', desc: 'Custom artwork and graphics' }
+                {
+                  icon: Palette,
+                  title: "Branding",
+                  desc: "Complete brand identity systems",
+                },
+                {
+                  icon: Monitor,
+                  title: "UI/UX Design",
+                  desc: "User-centered digital experiences",
+                },
+                {
+                  icon: Brush,
+                  title: "Illustration",
+                  desc: "Custom artwork and graphics",
+                },
               ].map((skill, index) => (
                 <motion.div
                   key={skill.title}
@@ -434,111 +539,15 @@ const Portfolio = () => {
         </div>
       </AnimatedSection>
 
-      {/* Work/Projects Section */}
-      {/* <AnimatedSection className="py-20 bg-black">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center mb-16">
-            <motion.h3 
-              className="text-yellow-400 text-sm font-bold tracking-wider uppercase mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              Portfolio
-            </motion.h3>
-            
-            <motion.h2 
-              className="text-4xl lg:text-5xl font-bold mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              My Work
-            </motion.h2> */}
+   
 
-            {/* Filter Buttons */}
-            {/* <motion.div 
-              className="flex flex-wrap justify-center gap-4 mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              {filterOptions.map((filter) => (
-                <button
-                  key={filter}
-                  onClick={() => setActiveFilter(filter)}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    activeFilter === filter
-                      ? 'bg-yellow-400 text-black'
-                      : 'bg-white bg-opacity-10 text-black hover:bg-opacity-20'
-                  }`}
-                >
-                  {filter}
-                </button>
-              ))}
-            </motion.div>
-          </div> */}
-
-          {/* Projects Grid */}
-          {/* <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            layout
-          >
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className="group relative bg-gray-900 rounded-2xl overflow-hidden cursor-pointer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
-                layout
-              >
-                <div className="aspect-[4/3] bg-gradient-to-br from-yellow-400 to-yellow-600 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-40 transition-all duration-300"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-black text-center">
-                      <Eye className="w-12 h-12 mx-auto mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                      <p className="font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Project</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-yellow-400 transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span 
-                        key={tag}
-                        className="px-3 py-1 bg-yellow-400 bg-opacity-20 text-gray-600 text-sm rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </AnimatedSection> */}
-
-
-
-      <MyWork/>
-  
+      <MyWork />
 
       {/* Services Section */}
       <AnimatedSection className="py-20 bg-white text-black">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <motion.h3 
+            <motion.h3
               className="text-yellow-600 text-sm font-bold tracking-wider uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -547,8 +556,8 @@ const Portfolio = () => {
             >
               Services
             </motion.h3>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-4xl lg:text-5xl font-bold mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -570,9 +579,7 @@ const Portfolio = () => {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05, y: -10 }}
               >
-                <motion.div 
-                  className="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300"
-                >
+                <motion.div className="w-20 h-20 bg-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <service.icon className="w-10 h-10 text-black" />
                 </motion.div>
                 <h3 className="text-2xl font-bold mb-4 group-hover:text-yellow-600 transition-colors duration-300">
@@ -588,28 +595,24 @@ const Portfolio = () => {
       </AnimatedSection>
 
       {/* Videos section */}
-       <div > 
-        <VideoGallery/>
-        </div>
+      <div>
+        <VideoGallery />
+      </div>
 
-        {/* Gallery */} 
-        <div > 
-
-         <GallerySection/>
-
-        </div>
-
-
+      {/* Gallery */}
+      <div>
+        <GallerySection />
+      </div>
 
       {/* Testimonials Section */}
 
-      <Testimonials/>
-     
+      <Testimonials />
+
       {/* Contact Section */}
       <AnimatedSection className="py-20 bg-black">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <motion.h3 
+            <motion.h3
               className="text-yellow-400 text-sm font-bold tracking-wider uppercase mb-4"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -618,8 +621,8 @@ const Portfolio = () => {
             >
               Contact
             </motion.h3>
-            
-            <motion.h2 
+
+            <motion.h2
               className="text-4xl lg:text-5xl font-bold mb-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -680,14 +683,17 @@ const Portfolio = () => {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-2xl font-bold mb-6 text-yellow-400">Get In Touch</h3>
+                <h3 className="text-2xl font-bold mb-6 text-yellow-400">
+                  Get In Touch
+                </h3>
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  Ready to bring your vision to life? Let&apos;s discuss your project and create something amazing together.
+                  Ready to bring your vision to life? Let&apos;s discuss your
+                  project and create something amazing together.
                 </p>
               </div>
 
               <div className="space-y-6">
-                <motion.div 
+                <motion.div
                   className="flex items-center space-x-4"
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.3 }}
@@ -701,7 +707,7 @@ const Portfolio = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   className="flex items-center space-x-4"
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.3 }}
@@ -715,7 +721,7 @@ const Portfolio = () => {
                   </div>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   className="flex items-center space-x-4"
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.3 }}
@@ -732,12 +738,14 @@ const Portfolio = () => {
 
               {/* Social Links */}
               <div className="pt-8 border-t border-white border-opacity-20">
-                <h4 className="text-lg font-bold mb-4 text-yellow-400">Follow Me</h4>
+                <h4 className="text-lg font-bold mb-4 text-yellow-400">
+                  Follow Me
+                </h4>
                 <div className="flex space-x-4">
                   {[
-                    { icon: Github, href: '#', label: 'GitHub' },
-                    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                    { icon: Twitter, href: '#', label: 'Twitter' }
+                    { icon: Github, href: "#", label: "GitHub" },
+                    { icon: Linkedin, href: "#", label: "LinkedIn" },
+                    { icon: Twitter, href: "#", label: "Twitter" },
                   ].map((social) => (
                     <motion.a
                       key={social.label}
@@ -755,7 +763,7 @@ const Portfolio = () => {
             </motion.div>
           </div>
         </div>
-      </AnimatedSection >
+      </AnimatedSection>
 
       {/* Footer */}
       {/* <footer className="py-12 bg-gray-900 border-t border-white border-opacity-10">

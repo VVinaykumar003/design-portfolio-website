@@ -5,8 +5,10 @@ import Portfolio from "./home/page";
 export default async function Home() {
   return (
     <>
-    {/* <Navbar /> */}
+ <div>
+
     <Portfolio/> 
+ </div>
  
     </>
   );
