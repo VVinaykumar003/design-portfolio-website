@@ -132,7 +132,7 @@ const ServicesSection: React.FC = () => {
               <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" style={{ animationDelay: '0.5s' }} />
             </div>
             
-            <h2 className="text-6xl md:text-8xl font-black text-white mb-8 relative tracking-tight">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-8 relative tracking-tight">
               <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
                 Our
               </span>

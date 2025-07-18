@@ -44,7 +44,7 @@ const Navbar = () => {
               className="flex items-center cursor-pointer transition-opacity hover:opacity-80"
             >
               <Image
-                src="/logo.png"
+                src="/Logo.PNG"
                 alt="Logo"
                 width={32}
                 height={32}

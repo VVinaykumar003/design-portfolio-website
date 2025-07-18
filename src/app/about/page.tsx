@@ -199,7 +199,9 @@ const AboutSection = () => {
                       }}
                       transition={{ duration: 2, ease: "easeInOut" }}
                     >
-                      JS
+                      {/* JS */}
+
+                      <img src={"https://media-pnq1-2.cdn.whatsapp.net/v/t61.24694-24/328789428_7742629389166492_2249539091650252324_n.jpg?ccb=11-4&oh=01_Q5Aa2AFb7RdyFpV-c3Newcg1_sQepHMrBqpHpNiqLcJ1QB9qhQ&oe=688734AD&_nc_sid=5e03e0&_nc_cat=108"} className="w-full h-full object-cover rounded-2xl" />
                     </motion.div>
                     
                     {/* Shine effect */}
@@ -272,7 +274,7 @@ const AboutSection = () => {
               {/* Dynamic Name Section */}
               <div className="space-y-6">
                 <motion.h1 
-                  className="text-6xl md:text-7xl lg:text-8xl font-black leading-none"
+                  className="text-5xl md:text-7xl lg:text-6xl font-black leading-none mt-12 text-gray-100"
                   variants={itemVariants}
                 >
                   <motion.span

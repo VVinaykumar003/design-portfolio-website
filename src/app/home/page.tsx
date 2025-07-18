@@ -256,7 +256,7 @@ const Portfolio = () => {
       {/* Left Section: Text Content */}
       <div className="text-white space-y-8 w-full">
         <motion.div variants={itemVariants} className="space-y-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
             Bringing
             <span className="relative inline-block mx-4">
               <span className="text-yellow-400">Ideas</span>
@@ -308,7 +308,9 @@ const Portfolio = () => {
             whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)" }}
             whileTap={{ scale: 0.95 }}
           >
+            <a href="/project" className="flex items-center space-x-2">
             <span>View My Work</span>
+            </a>
             <motion.div className="group-hover:translate-x-1 transition-transform duration-300">
               <ChevronRight className="w-5 h-5" />
             </motion.div>
@@ -328,8 +330,9 @@ const Portfolio = () => {
             <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center overflow-hidden">
               <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                 <div className="text-center text-gray-600">
-                  <Palette className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4" />
-                  <p className="text-sm font-medium">Profile Image</p>
+                  {/* <Palette className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4" /> */}
+               
+                  <img src={"https://media-pnq1-2.cdn.whatsapp.net/v/t61.24694-24/328789428_7742629389166492_2249539091650252324_n.jpg?ccb=11-4&oh=01_Q5Aa2AFb7RdyFpV-c3Newcg1_sQepHMrBqpHpNiqLcJ1QB9qhQ&oe=688734AD&_nc_sid=5e03e0&_nc_cat=108"} className="w-full h-full object-cover rounded-full" />
                 </div>
               </div>
             </div>
