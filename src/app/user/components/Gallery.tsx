@@ -39,8 +39,8 @@ const GallerySection = () => {
   const fetchGallery = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("/api/gallery");
-      console.log(response.data.gallery);
+      const response = await axios.get("/api/gallery/");
+      console.log("Gallery : ",response.data.data);
       
       // Since your console shows the data is directly an array, not wrapped in gallery property
       if (response.data.gallery && Array.isArray(response.data.gallery)) {

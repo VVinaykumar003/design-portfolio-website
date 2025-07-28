@@ -14,12 +14,7 @@ export async function POST(req: NextRequest) {
     const catogery = formData.get("catogery");
     const file = formData.get("file");
 
-    // console.log({
-    //   title,
-    //   description,
-    //   catogery,
-    //   file,
-    // });
+    
 
     let imageUrl = "";
     if (file && typeof file === "object" && "arrayBuffer" in file) {
@@ -48,6 +43,8 @@ export async function POST(req: NextRequest) {
     });
     await newImage.save();
 
+    console.log(newImage);
+
     return NextResponse.json(
       {
         message: "Gallery item uploaded successfully",
@@ -63,10 +60,17 @@ export async function POST(req: NextRequest) {
   }
 }
 
+// psot route for  testimonial
+
+
+
+
+// get all route for testimonial
 export async function GET() {
   try {
     await connectToDatabse();
     const gallery = await Gallery.find();
+    console.log("Gallery From backend : ", gallery );
 
     return NextResponse.json({
       message: "Found",

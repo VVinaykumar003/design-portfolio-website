@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import Sidebar from "@/app/components/Sidebar"
+import Sidebar from "@/app/(admin)/admin/components/Sidebar"
 import { Menu,Upload,} from 'lucide-react';
 import axios from "axios";
 // import { title } from "process";

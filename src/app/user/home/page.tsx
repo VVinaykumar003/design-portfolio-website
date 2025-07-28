@@ -95,36 +95,6 @@ const Portfolio = () => {
     }
   };
 
-  // Sample data
-  // const projects = [
-  //   { id: 1, title: 'Brand Identity Design', category: 'Branding', tags: ['Logo', 'Brand Guidelines', 'Stationery'] },
-  //   { id: 2, title: 'E-commerce Website', category: 'Web', tags: ['UI/UX', 'Responsive', 'E-commerce'] },
-  //   { id: 3, title: 'Event Poster Series', category: 'Posters', tags: ['Print Design', 'Typography', 'Events'] },
-  //   { id: 4, title: 'Mobile App Interface', category: 'UI-UX', tags: ['Mobile', 'UI Design', 'Prototyping'] },
-  //   { id: 5, title: 'Corporate Branding', category: 'Branding', tags: ['Corporate', 'Identity', 'Guidelines'] },
-  //   { id: 6, title: 'Restaurant Menu Design', category: 'Posters', tags: ['Menu', 'Print', 'Food & Beverage'] }
-  // ];
-
-  // const testimonials = [
-  //   {
-  //     quote: "Exceptional work! The brand identity they created perfectly captured our vision and elevated our business.",
-  //     client: "Sarah Johnson",
-  //     company: "Tech Innovations",
-  //     rating: 5
-  //   },
-  //   {
-  //     quote: "Professional, creative, and delivered on time. I highly recommend their design services.",
-  //     client: "Mike Chen",
-  //     company: "StartUp Co.",
-  //     rating: 5
-  //   },
-  //   {
-  //     quote: "Amazing attention to detail and great communication throughout the project.",
-  //     client: "Emma Davis",
-  //     company: "Creative Agency",
-  //     rating: 5
-  //   }
-  // ];
 
   const services = [
     {
@@ -180,9 +150,9 @@ const Portfolio = () => {
   return (
     <div className="bg-black text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden ">
         {/* Animated Background */}
-        <div className="absolute inset-0 sm:mt-10">
+        <div className="absolute inset-0 sm:mt-10 md:mt-24 lg:mt-24 xl:mt-32">
           <motion.div
             className="absolute top-20 left-20 w-96 h-96 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
             animate={{
@@ -247,16 +217,16 @@ const Portfolio = () => {
        
   {/* Main Container */}
   <motion.div
-    className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 min-h-screen flex items-center"
+    className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-12 min-h-screen flex items-center justify-center"
     variants={containerVariants}
     initial="hidden"
     animate="visible"
   >
     <div className="w-full flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12 items-center">
       {/* Left Section: Text Content */}
-      <div className="text-white space-y-8 w-full">
+      <div className="text-white space-y-8 w-full md:mt-20">
         <motion.div variants={itemVariants} className="space-y-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 className="text-4xl md:text-4xl sm:text-5xl lg:text-5xl font-bold leading-tight">
             Bringing
             <span className="relative inline-block mx-4">
               <span className="text-yellow-400">Ideas</span>
@@ -320,7 +290,7 @@ const Portfolio = () => {
 
       {/* Right Section: Image/Visual */}
       <motion.div variants={itemVariants} className="relative flex justify-center w-full">
-        <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg">
+        <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md xl:max-w-lg mt-20">
           <motion.div
             className="relative w-full aspect-square"
             variants={pulseVariants}
