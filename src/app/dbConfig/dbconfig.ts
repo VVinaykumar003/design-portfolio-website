@@ -16,9 +16,9 @@ else{
 
 export async function connectToDatabse (){
     try {
-        console.log(URI);
+        // console.log(URI);
 
-        await mongoose.connect("mongodb+srv://vvinaykumar3000:7H383pLgjQhba@cluster0.ahoy48m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+        await mongoose.connect(URI);
 
         mongoose.connection.on("connected",()=>{
             console.log("Connected to database")

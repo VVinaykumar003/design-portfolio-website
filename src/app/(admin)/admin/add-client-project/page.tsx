@@ -130,7 +130,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> 
     }
 
     const result = await response.json();
-    console.log('Project added successfully:', result);
 
 
         // const debugData: SubmitProjectData = {

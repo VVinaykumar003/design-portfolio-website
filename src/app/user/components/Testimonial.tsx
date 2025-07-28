@@ -25,7 +25,7 @@ const Testimonials = () => {
   const fetchTestimonials = async () => {
     try {
       const response = await axios.get("/api/testimonial");
-      console.log(response.data)
+      // console.log(response.data)
       setTestimonials(response.data.response);
     } catch (error) {
       console.error("Failed to fetch testimonials:", error);

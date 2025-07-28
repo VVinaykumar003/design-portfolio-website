@@ -80,7 +80,7 @@ const BlogForm = () => {
             'Content-Type':"multipart/form-data",
         },
       });
-      console.log(response);
+     
       
       setSubmitMessage('Blog uploaded successfully!');
       setFormData({

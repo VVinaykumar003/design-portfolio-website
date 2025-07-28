@@ -80,7 +80,7 @@ const AdminDashboard = () => {
             'Content-Type':"multipart/form-data",
         },
       });
-      console.log(response);
+ 
       
       setSubmitMessage('Gallery item uploaded successfully!');
       setFormData({

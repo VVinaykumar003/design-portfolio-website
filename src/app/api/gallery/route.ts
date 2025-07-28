@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     });
     await newImage.save();
 
-    console.log(newImage);
+    // console.log(newImage);
 
     return NextResponse.json(
       {
@@ -70,7 +70,7 @@ export async function GET() {
   try {
     await connectToDatabse();
     const gallery = await Gallery.find();
-    console.log("Gallery From backend : ", gallery );
+    // console.log("Gallery From backend : ", gallery );
 
     return NextResponse.json({
       message: "Found",

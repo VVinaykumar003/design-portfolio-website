@@ -1,7 +1,7 @@
 "use client";
 import Sidebar from "@/app/(admin)/admin/components/Sidebar"
 import React, { useState } from "react";
-import { Menu,Upload,} from 'lucide-react';
+import { Menu} from 'lucide-react';
 
 function TestimonialForm() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -39,7 +39,7 @@ function TestimonialForm() {
         method: "POST",
         body: form,
       });
-      console.log(res.formData)
+   
 
       // const data = await res.json();
       if (res.ok) {
