@@ -28,6 +28,7 @@ import VideoGallery from '../components/VideoGallery';
 import Testimonials from '../components/Testimonial';
 import MyWork from '../components/Work';
 import GallerySection from '../components/Gallery';
+import firstProject from '../../assets/firstProject.jpg';
 // import Gallery from '../models/galleryModel';;
 
 const Portfolio = () => {
@@ -150,8 +151,9 @@ const Portfolio = () => {
   return (
     <div className="bg-black text-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden ">
-        {/* Animated Background */}
+     
+<section className="relative min-h-screen overflow-hidden pb-24 sm:pb-32">
+     {/* Animated Background */}
         <div className="absolute inset-0 sm:mt-10 md:mt-24 lg:mt-24 xl:mt-32">
           <motion.div
             className="absolute top-20 left-20 w-96 h-96 bg-yellow-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
@@ -302,7 +304,7 @@ const Portfolio = () => {
                 <div className="text-center text-gray-600">
                   {/* <Palette className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4" /> */}
                
-                  <img src={"https://media-pnq1-2.cdn.whatsapp.net/v/t61.24694-24/328789428_7742629389166492_2249539091650252324_n.jpg?ccb=11-4&oh=01_Q5Aa2AFb7RdyFpV-c3Newcg1_sQepHMrBqpHpNiqLcJ1QB9qhQ&oe=688734AD&_nc_sid=5e03e0&_nc_cat=108"} className="w-full h-full object-cover rounded-full" />
+                  <img src={firstProject.src} className="w-full h-full object-cover rounded-full" />
                 </div>
               </div>
             </div>
@@ -330,7 +332,7 @@ const Portfolio = () => {
 
   {/* Scroll Indicator */}
   <motion.div
-    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
+    className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white "
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ delay: 3 }}
@@ -338,7 +340,7 @@ const Portfolio = () => {
     <motion.div
       animate={{ y: [0, 10, 0] }}
       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      className="flex flex-col items-center space-y-2"
+      className="flex flex-col items-center space-y-2 "
     >
       <span className="text-xs sm:text-sm text-gray-400">Scroll to explore</span>
       <div className="w-5 sm:w-6 h-8 sm:h-10 border-2 border-gray-400 rounded-full flex justify-center">

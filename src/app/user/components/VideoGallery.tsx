@@ -48,10 +48,15 @@ const VideoGallery = () => {
     },
   ];
 
-  const renderVideoCard = (video: typeof videos[0]) => (
+const renderVideoCard = (video: typeof videos[0]) => {
+  // Choose classes based on type
+  const isPortrait = video.type === "portrait";
+  const aspectClass = isPortrait ? "aspect-[9/16] max-w-[320px]" : "aspect-[16/9] max-w-[480px]";
+  
+  return (
     <div
       key={video.id}
-      className="group p-25 relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-800 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/20"
+      className={`group relative overflow-hidden rounded-2xl bg-gray-900 border border-gray-800 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/20 w-full ${aspectClass}`}
       onMouseEnter={() => setHoveredVideo(video.id)}
       onMouseLeave={() => setHoveredVideo(null)}
     >
@@ -61,12 +66,11 @@ const VideoGallery = () => {
           loading="lazy"
           src={video.thumbnail}
           alt={video.title}
-          className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 "
+          className={`w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110 rounded-2xl ${aspectClass}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
         <div className="absolute inset-0 bg-yellow-400/0 group-hover:bg-yellow-400/10 transition-colors duration-500"></div>
       </div>
-
       {/* Play Button */}
       <div className="absolute inset-0 flex items-center justify-center">
         <div
@@ -79,7 +83,6 @@ const VideoGallery = () => {
           <Play className="w-6 h-6 text-black ml-1" fill="currentColor" />
         </div>
       </div>
-
       {/* Info */}
       <div className="absolute bottom-0 left-0 right-0 p-4">
         <div className="flex items-center justify-between mb-2 text-xs text-gray-300">
@@ -107,6 +110,10 @@ const VideoGallery = () => {
       <div className="absolute inset-0 border-2 border-yellow-400 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
     </div>
   );
+};
+
+
+
 
   const portraitVideos = videos.filter((video) => video.type === "portrait");
   const landscapeVideos = videos.filter((video) => video.type === "landscape");
@@ -125,14 +132,15 @@ const VideoGallery = () => {
       </div>
 
       {/* Portrait Videos */}
-      <section className="mb-16">
-        <h2 className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-6 border-l-4 border-yellow-400 pl-4">
-          Portrait Videos
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {portraitVideos.map(renderVideoCard)}
-        </div>
-      </section>
+     <section className="mb-16 py-8 sm:py-16">
+  <h2 className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-6 border-l-4 border-yellow-400 pl-4">
+    Portrait Videos
+  </h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+    {portraitVideos.map(renderVideoCard)}
+  </div>
+</section>
+
 
       {/* Landscape Videos */}
       <section>

@@ -19,24 +19,24 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // const menuItems = [
+  //   { name: "Home", href: "/home" },
+  //   { name: "About", href: "/about" },
+  //   { name: "Projects", href: "/project" },
+  //   { name: "Blogs", href: "/blogs" },
+  //   { name: "Services", href: "/servicess" },
+  //   { name: "Contact", href: "/contact" },
+  //   { name: "Client", href: "/clientpage" },
+  // ];
   const menuItems = [
-    { name: "Home", href: "/home" },
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/project" },
-    { name: "Blogs", href: "/blogs" },
-    { name: "Services", href: "/servicess" },
-    { name: "Contact", href: "/contact" },
-    { name: "Client", href: "/clientpage" },
-  ];
-//   const menuItems = [
-//   { name: "Home", href: "/user/home" },
-//   { name: "About", href: "/user/about" },
-//   { name: "Projects", href: "/user/projects" },
-//   { name: "Blogs", href: "/user/blogs" },
-//   { name: "Services", href: "/user/servicess" },
-//   { name: "Contact", href: "/user/contact" },
-//   { name: "Client", href: "/user/clientpage" },
-// ];
+  { name: "Home", href: "/user/home" },
+  { name: "About", href: "/user/about" },
+  { name: "Projects", href: "/user/projects" },
+  { name: "Blogs", href: "/user/blogs" },
+  { name: "Services", href: "/user/servicess" },
+  { name: "Contact", href: "/user/contact" },
+  { name: "Client", href: "/user/clientpage" },
+];
 
 
   return (
@@ -54,11 +54,7 @@ const Navbar = () => {
               className="flex items-center cursor-pointer transition-opacity hover:opacity-80"
             >
               <Image
-<<<<<<< HEAD:src/app/components/Navbar.tsx
-                src="/Logo.jpeg"
-=======
                 src="/Logo.PNG"
->>>>>>> 27ebc09b8c9401c5a8eac2c52c6e2c78fb8f76bf:src/app/user/components/Navbar.tsx
                 alt="Logo"
                 width={32}
                 height={32}
