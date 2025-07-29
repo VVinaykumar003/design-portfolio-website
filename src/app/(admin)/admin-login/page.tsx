@@ -60,7 +60,7 @@ const handleSubmit = async (e: React.MouseEvent<HTMLButtonElement>) => {
         router.push('/admin/dashboard');
         
         // Handle successful login
-        console.log('Login successful:', data);
+        // console.log('Login successful:', data);
         
         // Redirect to admin dashboard
         

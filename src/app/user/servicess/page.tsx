@@ -22,34 +22,63 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: 'Logo Design',
-    description: 'Create memorable and impactful logos that perfectly represent your brand identity and values with cutting-edge design principles.',
+    title: 'Visual Identity & Branding',
+    description: 'Craft cohesive visual identities and branding that align with your mission, values, and audience for lasting impact.',
     icon: <Palette className="w-10 h-10" />,
     gradient: 'from-yellow-400 via-yellow-300 to-amber-400'
   },
   {
     id: 2,
-    title: 'UI/UX Design',
-    description: 'Design intuitive and engaging user interfaces that provide exceptional user experiences and drive meaningful interactions.',
+    title: 'Creative Direction & Art Consultation',
+    description: 'Guide the creative process across projects, offering expert consultation for visual storytelling and aesthetic cohesion.',
     icon: <Monitor className="w-10 h-10" />,
     gradient: 'from-yellow-300 via-amber-300 to-yellow-400'
   },
   {
     id: 3,
-    title: 'Brand Identity',
-    description: 'Develop comprehensive brand systems that communicate your unique story and create lasting emotional connections.',
+    title: 'NFT Creation (Mixed Media & Experimental Artworks)',
+    description: 'Explore Web3 through cutting-edge NFT artwork using diverse media forms and innovative digital experimentation.',
     icon: <User className="w-10 h-10" />,
     gradient: 'from-amber-400 via-yellow-400 to-yellow-300'
   },
   {
     id: 4,
+    title: 'Visual Documentation & Film Making',
+    description: 'Capture and produce compelling visual stories through photography, film, and narrative-driven content.',
+    icon: <FileText className="w-10 h-10" />,
+    gradient: 'from-yellow-400 via-amber-400 to-yellow-300'
+  },
+  {
+    id: 5,
+    title: 'Creative Strategy & Campaign Design',
+    description: 'Design integrated campaigns powered by clear creative direction, branding consistency, and bold execution.',
+    icon: <Zap className="w-10 h-10" />,
+    gradient: 'from-yellow-400 via-yellow-300 to-amber-300'
+  },
+  {
+    id: 6,
+    title: 'Creative Mentorship',
+    description: 'Empower emerging creatives with mentorship focused on industry navigation, portfolio building, and concept execution.',
+    icon: <User className="w-10 h-10" />,
+    gradient: 'from-amber-300 via-yellow-300 to-yellow-500'
+  },
+  {
+    id: 7,
+    title: 'Pre & Post Production',
+    description: 'Support across video workflows including scripting, storyboarding, editing, color grading, and sound design.',
+    icon: <Monitor className="w-10 h-10" />,
+    gradient: 'from-yellow-400 via-amber-400 to-yellow-300'
+  },
+  {
+    id: 8,
     title: 'Print Design',
-    description: 'Create stunning print materials from business cards to large format designs with precision, style, and attention to detail.',
+    description: 'Deliver high-quality printed materials from concept to production — including editorial, packaging, and promotional work.',
     icon: <FileText className="w-10 h-10" />,
     gradient: 'from-yellow-400 via-amber-400 to-yellow-300'
   }
 ];
 
+// Reduce top spacing and improve responsiveness
 const ServicesSection: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -132,7 +161,7 @@ const ServicesSection: React.FC = () => {
               <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" style={{ animationDelay: '0.5s' }} />
             </div>
             
-            <h2 className="text-6xl md:text-8xl font-black text-white mb-8 relative tracking-tight">
+            <h2 className="text-5xl md:text-7xl font-black text-white mb-8 relative tracking-tight">
               <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
                 Our
               </span>

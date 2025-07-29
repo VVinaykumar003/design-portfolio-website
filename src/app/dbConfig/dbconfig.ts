@@ -2,17 +2,22 @@ import mongoose from "mongoose";
 import admin from "../models/adminModel";
 import bcrypt from "bcryptjs";
 
+
 let URI:string;
 
 if(process.env.NODE_ENV=="development"){
     URI = process.env.MONGO_URI!
+    //  console.log(URI);
 }
 else{
     URI = process.env.MONGO_ATLAS_URI!
+    //  console.log(URI);
 }
 
 export async function connectToDatabse (){
     try {
+        // console.log(URI);
+
         await mongoose.connect(URI);
 
         mongoose.connection.on("connected",()=>{

@@ -215,7 +215,7 @@ const ContactSection: React.FC = () => {
               <Heart className="w-5 h-5 text-yellow-400 animate-pulse" style={{ animationDelay: '0.5s' }} />
             </div>
             
-            <h2 className="text-6xl md:text-8xl font-black text-white mb-8 relative tracking-tight">
+            <h2 className="text-6xl md:text-6xl font-black text-white mb-8 relative tracking-tight">
               <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent">
                 Get In
               </span>
@@ -410,7 +410,7 @@ const ContactSection: React.FC = () => {
             <div className="space-y-12">
               {/* Direct Contact */}
               <div className="relative bg-gradient-to-br from-gray-900/30 to-black/30 backdrop-blur-sm border border-gray-800/30 p-8 rounded-2xl">
-                <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                <h3 className="text-3xl font-bold text-white mb-6 flex items-center gap-3 mt-4">
                   <Mail className="w-8 h-8 text-yellow-400" />
                   Direct Contact
                 </h3>

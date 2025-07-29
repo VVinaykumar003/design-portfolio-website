@@ -1,13 +1,8 @@
-// import Navbar from "./components/Navbar";
-// import GallerySection from "./components/Gallery";
-import Portfolio from "./home/page";
+import React from 'react'
+import Portfolio from '@/app/user/home/page'
 
-export default async function Home() {
+export default function Home()  {
   return (
-    <>
-    {/* <Navbar /> */}
-    <Portfolio/> 
- 
-    </>
-  );
+ <Portfolio/>
+  )
 }

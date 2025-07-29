@@ -1,6 +1,7 @@
 "use client";
-import Sidebar from "@/app/components/Sidebar";
+import Sidebar from "@/app/(admin)/admin/components/Sidebar"
 import React, { useState } from "react";
+import { Menu} from 'lucide-react';
 
 function TestimonialForm() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -38,6 +39,7 @@ function TestimonialForm() {
         method: "POST",
         body: form,
       });
+   
 
       // const data = await res.json();
       if (res.ok) {
@@ -53,6 +55,24 @@ function TestimonialForm() {
   return (
     <div className="flex h-screen bg-black text-white">
       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
+
+       <div className="flex-1 flex flex-col min-h-screen">
+        {/* Top Bar */}
+        <header className="bg-black  px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center">
+            <button 
+              onClick={toggleSidebar}
+              className="lg:hidden mr-4 text-yellow-400 hover:text-yellow-300 transition-colors"
+            >
+              <Menu size={24} />
+            </button>
+            <h1 className="text-2xl font-bold text-yellow-400">Dashboard</h1>
+          </div>
+          <div className="text-yellow-300 text-sm">
+            Welcome back, Admin
+          </div>
+        </header>
+
       <main className="flex-1 mt-20 md:ml-64 overflow-y-auto">
         <div className="max-w-2xl mx-auto border border-yellow-400 rounded-lg p-6">
           <h2 className="text-2xl font-bold text-yellow-400 mb-6 flex items-center">
@@ -127,6 +147,7 @@ function TestimonialForm() {
           </form>
         </div>
       </main>
+    </div>
     </div>
   );
 }

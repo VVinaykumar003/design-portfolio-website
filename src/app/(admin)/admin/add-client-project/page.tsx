@@ -1,5 +1,5 @@
 'use client';
-import Sidebar from '@/app/components/Sidebar';
+import Sidebar from '@/app/(admin)/admin/components/Sidebar';
 import React, { useState } from 'react';
 import { Plus, Upload, Save, Trash2 } from 'lucide-react';
 
@@ -130,7 +130,6 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> 
     }
 
     const result = await response.json();
-    console.log('Project added successfully:', result);
 
 
         // const debugData: SubmitProjectData = {
@@ -161,7 +160,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> 
 };
 
   return (
-    <div className="flex h-screen bg-black overflow-hidden pt-20">
+    <div className="flex h-screen bg-black overflow-hidden pt-0">
       {/* Fixed Sidebar */}
       <div className="fixed top-0 left-0 h-screen w-64 z-30">
         <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />
@@ -178,22 +177,26 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>): Promise<void> 
       {/* Main content */}
       <main className="flex-1 ml-0 lg:ml-64 h-screen overflow-y-auto">
         {/* Header */}
-        <div className="p-6 lg:p-8 border-b border-gray-800">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">
-                Add Client Project
-              </h1>
-              <p className="text-gray-400">
-                Create a new client project with portfolio details
-              </p>
-            </div>
-            <div className="text-right">
-              <p className="text-yellow-400 font-medium">Welcome back, Admin</p>
-              <div className="w-12 h-0.5 bg-yellow-400 ml-auto mt-1"></div>
-            </div>
-          </div>
-        </div>
+      <div className="p-6 lg:p-8 border-b border-gray-800">
+  <div className="flex items-center justify-between">
+    {/* Left Section: Title and Subtitle */}
+    <div>
+      <h1 className="text-3xl lg:text-4xl font-bold text-yellow-400 mb-2">
+        Add Client Project
+      </h1>
+      <p className="text-gray-400">
+        Create a new client project with portfolio details.
+      </p>
+    </div>
+
+    {/* Right Section: Admin Welcome */}
+    <div className="text-right">
+      <p className="text-yellow-400 font-medium">Welcome back, Admin</p>
+      <div className="w-12 h-0.5 bg-yellow-400 ml-auto mt-1" />
+    </div>
+  </div>
+</div>
+
 
         {/* Form */}
         <div className="p-6 lg:p-8">

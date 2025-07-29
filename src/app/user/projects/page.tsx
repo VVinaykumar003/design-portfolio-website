@@ -236,12 +236,12 @@ const ProjectsSection = () => {
           </motion.div>
 
           <motion.h2 
-            className="text-6xl md:text-7xl lg:text-8xl font-black mb-8"
+            className="text-6xl md:text-7xl lg:text-6xl font-black mb-8"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
           >
-            Featured{" "}
+            Featured {" "}
             <motion.span 
               className="text-yellow-400 inline-block"
               animate={{

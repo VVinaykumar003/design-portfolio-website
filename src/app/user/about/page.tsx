@@ -9,12 +9,6 @@ const AboutSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isPlaying, setIsPlaying] = useState(true);
 
-
-  //  useEffect(() => {
-  //  setMousePosition({ x: 0, y: 0 }); // fixes hydration mismatch
-  // }, []);
-  
-
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
@@ -37,14 +31,14 @@ const AboutSection = () => {
   }, []);
 
   useEffect(() => {
-  if (isPlaying) {
-    const interval = setInterval(() => {
-      setActiveSkill((prev) => (prev + 1) % skills.length);
-      console.log(`Active skill changed to: ${skills.length}`);
-    }, 3000);
-    return () => clearInterval(interval);
-  }
-}, [isPlaying, skills.length]);
+    if (isPlaying) {
+      const interval = setInterval(() => {
+        setActiveSkill((prev) => (prev + 1) % skills.length);
+        console.log(`Active skill changed to: ${skills.length}`);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying, skills.length]);
 
 
   const containerVariants = {
@@ -145,7 +139,7 @@ const AboutSection = () => {
         />
       </div>
 
-      <section className="relative z-10 py-20 px-6 md:px-12 lg:px-20">
+      <section className="relative z-10 py-20 px-6 md:px-12 lg:px-10">
         <div className="max-w-7xl mx-auto">
           <motion.div
             variants={containerVariants}
@@ -177,7 +171,7 @@ const AboutSection = () => {
                 
                 {/* Main profile container */}
                 <motion.div 
-                  className="relative bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-3xl p-8 border border-gray-700 backdrop-blur-xl shadow-2xl"
+                  className="relative bg-gradient-to-br from-gray-900 via-black to-gray-800 rounded-3xl p-8 border border-gray-700 backdrop-blur-xl shadow-2xl mt-0"
                   whileHover={{ 
                     scale: 1.02,
                     rotateY: 5,
@@ -199,7 +193,8 @@ const AboutSection = () => {
                       }}
                       transition={{ duration: 2, ease: "easeInOut" }}
                     >
-                      JS
+                      {/* Assuming this is your profile image. Make sure the URL is correct and accessible. */}
+                      <img src={"https://media-pnq1-2.cdn.whatsapp.net/v/t61.24694-24/328789428_7742629389166492_2249539091650252324_n.jpg?ccb=11-4&oh=01_Q5Aa2AFb7RdyFpV-c3Newcg1_sQepHMrBqpHpNiqLcJ1QB9qhQ&oe=688734AD&_nc_sid=5e03e0&_nc_cat=108"} className="w-full h-full object-cover rounded-2xl" alt="Profile" />
                     </motion.div>
                     
                     {/* Shine effect */}
@@ -229,6 +224,12 @@ const AboutSection = () => {
                   </motion.div>
                 </motion.div>
 
+
+
+{/* Main profile container End */}
+
+
+
                 {/* Orbiting elements */}
                 {[0, 1, 2].map((i) => (
                   <motion.div
@@ -251,14 +252,13 @@ const AboutSection = () => {
                       y: { duration: 10 + i * 2, repeat: Infinity, ease: "linear" }
                     }}
                   >
-           {
-  [
-    <Code key="code" className="w-6 h-6 text-black" />,
-    <Paintbrush key="paintbrush" className="w-6 h-6 text-black" />,
-    <Sparkles key="sparkles" className="w-6 h-6 text-black" />
-  ][i]
-}
-
+                    {
+                      [
+                        <Code key="code" className="w-6 h-6 text-black" />,
+                        <Paintbrush key="paintbrush" className="w-6 h-6 text-black" />,
+                        <Sparkles key="sparkles" className="w-6 h-6 text-black" />
+                      ][i]
+                    }
                   </motion.div>
                 ))}
               </div>
@@ -272,7 +272,7 @@ const AboutSection = () => {
               {/* Dynamic Name Section */}
               <div className="space-y-6">
                 <motion.h1 
-                  className="text-6xl md:text-7xl lg:text-8xl font-black leading-none"
+                  className="text-5xl md:text-7xl lg:text-6xl font-black leading-none mt-12 text-gray-100"
                   variants={itemVariants}
                 >
                   <motion.span
@@ -283,7 +283,7 @@ const AboutSection = () => {
                       transition: { duration: 0.5 }
                     }}
                   >
-                    Jane
+                    Aniruddh
                   </motion.span>{" "}
                   <motion.span 
                     className="text-yellow-400 inline-block bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text hover:text-transparent"
@@ -292,7 +292,7 @@ const AboutSection = () => {
                     }}
                     transition={{ duration: 3, repeat: Infinity }}
                   >
-                    Smith
+                    Agrawal
                   </motion.span>
                 </motion.h1>
                 
@@ -313,46 +313,39 @@ const AboutSection = () => {
                     }}
                     transition={{ duration: 3, repeat: Infinity }}
                   >
-                    Creative Visionary
+                    Multidisciplinary Visual Artist
                   </motion.p>
                 </motion.div>
               </div>
 
               {/* Enhanced Bio */}
-              <motion.div variants={itemVariants} className="space-y-8">
-                <motion.p 
-                  className="text-xl md:text-2xl leading-relaxed text-gray-300"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  I craft{" "}
-                  <motion.span 
-                    className="text-yellow-400 font-bold relative"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    digital experiences
-                    <motion.div
-                      className="absolute -bottom-1 left-0 h-0.5 bg-yellow-400"
-                      initial={{ width: 0 }}
-                      whileHover={{ width: "100%" }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </motion.span>{" "}
-                  that blur the line between art and technology. With 8+ years of pushing creative boundaries, I transform concepts into visual poetry.
-                </motion.p>
-                
-                <motion.p 
-                  className="text-lg leading-relaxed text-gray-400"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 }}
-                >
-                  Every pixel tells a story. Every interaction sparks emotion. Let&apos;s create something extraordinary together.
-                </motion.p>
-              </motion.div>
+            <motion.div variants={itemVariants} className="space-y-8">
+  <motion.p 
+    className="text-xl md:text-2xl leading-relaxed text-white font-light"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.5 }}
+  >
+    From <span className="text-yellow-400 font-semibold">Raipur, Chhattisgarh</span>. Young enthusiastic guy building my creative dream. <span className="text-yellow-300 font-semibold">Mad multitasker</span> with super pressure handling skills. Sometimes I forget to sleep due to work. <span className="text-yellow-400 font-semibold">GOAT</span> at finding creative solutions to hardcore problems. Have anger issues but kind from inside. Turn my headache into a brainstorming session.
+  </motion.p>
 
-              {/* Revolutionary Skills Section */}
+  <motion.p 
+    className="text-lg leading-relaxed text-gray-400"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.8 }}
+  >
+    Introvert person dreaming of becoming a celebrity designer one day. Can be heartbroken but still work like hell. Civil engineer turned multidisciplinary visual artist with 5+ years of experience in branding. Hate partying and works on vacations too.
+  </motion.p>
+</motion.div>
+
+
+             
+            </motion.div>
+          </motion.div>
+
+          <div className='mt-16 lg:mt-24 space-y-12'>
+             {/* Revolutionary Skills Section */}
               <motion.div variants={itemVariants} className="space-y-8">
                 <div className="flex items-center justify-between">
                   <h3 className="text-3xl font-bold text-yellow-400">
@@ -459,8 +452,8 @@ const AboutSection = () => {
                   </span>
                 </motion.button>
               </motion.div>
-            </motion.div>
-          </motion.div>
+
+          </div>
         </div>
       </section>
     </div>
